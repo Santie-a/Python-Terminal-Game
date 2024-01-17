@@ -33,4 +33,24 @@ def add_token(token, board, pos):
 	return board
 	
 def check_winner(board):
-	return False
+    # Check for rows
+    for row in board:
+        for i in range(4):
+            if row[i] == "Y" and row[i+1] == "Y" and row[i+2] == "Y" and row[i+3] == "Y":
+                return True
+            elif row[i] == "R" and row[i+1] == "R" and row[i+2] == "R" and row[i+3] == "R":
+                return True
+	    
+	# Check for columns
+    for i in range(3):
+        for j in range(7):
+            if board[i][j] == "Y" and board[i+1][j] == "Y" and board[i+2][j] == "Y" and board[i+3][j] == "Y":
+                return True
+            elif board[i][j] == "R" and board[i+1][j] == "R" and board[i+2][j] == "R" and board[i+3][j] == "R":
+                return True
+            
+    # Check for diagonals
+    
+	    
+    else:
+        return False
